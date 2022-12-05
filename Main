@@ -3,23 +3,23 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Main {
+public class Main5 {
 
     public static void main(String[] args) {
-        // Frame and Panel
+
         JFrame frame = new JFrame("SUBTRACTION");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panelTitle = new JPanel(new FlowLayout());
-        JPanel panelOne = new JPanel(new GridLayout(2,2,1,1));
+        JPanel panelOne = new JPanel(new GridLayout(3,3,1,1));
         JPanel panelTwo = new JPanel(new FlowLayout());
         JButton button = new JButton("CLICK TO SEE THE DIFFERENCE");
 
-        // Setting the panel sizes
+
         panelTitle.setBounds(10,10,380,40);
-        panelOne.setBounds(10,60,380,80);
+        panelOne.setBounds(10,60,380,60);
         panelTwo.setBounds(10,200,380,40);
 
-        // Color for visualization only
+
         panelTitle.setBackground(Color.GRAY );
         panelOne.setBackground(Color.GRAY );
         panelTwo.setBackground(Color.GRAY);
@@ -54,11 +54,8 @@ public class Main {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //System.out.println("Button Clicked");
-                //System.out.println(tFieldOne.getText());
-                //System.out.println(tFieldTwo.getText());
                 int result = computeValue(tFieldOne.getText(), tFieldTwo.getText());
-                //System.out.println(result);
+
                 displayMessage(String.valueOf(result));
             }
 
@@ -70,18 +67,17 @@ public class Main {
         frame.add(panelOne);
         frame.add(panelTwo);
 
-        // make the frame half the height and width
+
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int height = screenSize.height;
         int width = screenSize.width;
-        // set size to half of screen
-        //frame.setSize(width/2, height/2);
+
 
         frame.setSize(400,350);
         frame.setResizable(false);
         frame.setLayout(null);
 
-        // center the jframe on screen
+
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
